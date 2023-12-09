@@ -56,6 +56,7 @@ public class TaskController {
         return tasks(model, 1, 10);
     }
 
+
     @DeleteMapping("/{id}")
     public String delete(Model model,
                          @PathVariable Integer id) {

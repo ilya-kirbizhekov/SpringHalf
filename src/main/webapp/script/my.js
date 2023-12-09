@@ -73,5 +73,7 @@ function add_task() {
         data: JSON.stringify({"description": value_description, "status": value_status})
     });
 
-    setTimeout(() => {document.location.reload();}, 300);
+    setTimeout(() => {
+        document.location.reload();
+        }, 300);
 }
