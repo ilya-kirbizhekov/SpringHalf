@@ -1,7 +1,7 @@
 package com.ilyoniss.domain;
 
-import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "todo", name = "task")

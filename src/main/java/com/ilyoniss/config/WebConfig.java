@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
@@ -47,6 +48,14 @@ public class WebConfig implements WebMvcConfigurer {
         return engine;
     }
 
+    @Bean
+    public ThymeleafViewResolver viewResolver() {
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(engine());
+        return viewResolver;
+    }
+
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("tasks");
@@ -57,7 +66,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/html/**").addResourceLocations("/html/");
         registry.addResourceHandler("/style/**").addResourceLocations("/style/");
         registry.addResourceHandler("/script/**").addResourceLocations("/script/");
-        registry.addResourceHandler("/image/**").addResourceLocations("/image/");
+
     }
 
 

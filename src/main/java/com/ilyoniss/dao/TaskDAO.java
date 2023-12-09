@@ -13,7 +13,6 @@ import java.util.List;
 @Repository
 public class TaskDAO {
 
-
     private final SessionFactory sessionFactory;
 
     public TaskDAO(SessionFactory sessionFactory) {
@@ -60,6 +59,7 @@ public class TaskDAO {
 
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     public void delete(Task task)
     {
 

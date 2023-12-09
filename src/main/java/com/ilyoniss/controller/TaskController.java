@@ -13,6 +13,7 @@ import java.util.stream.IntStream;
 import static java.util.Objects.isNull;
 
 @Controller
+@RequestMapping("/")
 public class TaskController {
 
     private final TaskService taskService;
@@ -20,6 +21,7 @@ public class TaskController {
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String tasks (Model model,
